@@ -222,7 +222,7 @@
         }
 
         /* Color Blind Filters */
-        body.mode-protanopia .custom-navbar,
+       body.mode-protanopia .custom-navbar,
         body.mode-protanopia .main-container,
         body.mode-protanopia .quiz-container,
         body.mode-protanopia footer,
@@ -230,6 +230,9 @@
         body.mode-protanopia #quiz-overlay {
             -webkit-filter: url('#protanopia');
             filter: url('#protanopia');
+            backdrop-filter: none !important; /* ปิดเบลอเพื่อให้สีทำงาน */
+            -webkit-backdrop-filter: none !important;
+            background: rgba(255, 255, 255, 0.95); /* เพิ่มความทึบแทน */
         }
 
         body.mode-deuteranopia .custom-navbar,
@@ -240,6 +243,9 @@
         body.mode-deuteranopia #quiz-overlay {
             -webkit-filter: url('#deuteranopia');
             filter: url('#deuteranopia');
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            background: rgba(255, 255, 255, 0.95);
         }
 
         body.mode-tritanopia .custom-navbar,
@@ -250,6 +256,9 @@
         body.mode-tritanopia #quiz-overlay {
             -webkit-filter: url('#tritanopia');
             filter: url('#tritanopia');
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            background: rgba(255, 255, 255, 0.95);
         }
 
         body.mode-achromatopsia .custom-navbar,
@@ -260,18 +269,8 @@
         body.mode-achromatopsia #quiz-overlay {
             -webkit-filter: grayscale(100%);
             filter: grayscale(100%);
+            /* โหมดขาวดำมักไม่มีปัญหากับกระจกเบลอ แต่ใส่ไว้กันเหนียวได้ครับ */
         }
-
-        /* คืนค่าปกติ */
-        body.mode-normal .custom-navbar,
-        body.mode-normal .main-container,
-        body.mode-normal .quiz-container,
-        body.mode-normal footer,
-        body.mode-normal #cat-companion,
-        body.mode-normal #quiz-overlay {
-            -webkit-filter: none;
-            filter: none;
-        }  
 
     </style>
 </head>
@@ -279,19 +278,19 @@
 <body style="background-image: url('BgQ1.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; background-attachment: fixed;">
     <div id="colorblind-filter-overlay"></div>
     <!-- Color Blind SVG Defs -->
-    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-        <filter id="protanopia">
-            <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0 0.558, 0.442, 0, 0, 0 0, 0.242, 0.758, 0, 0 0, 0, 0, 1, 0" />
-        </filter>
-        <filter id="deuteranopia">
-            <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0 0.7, 0.3, 0, 0, 0 0, 0.3, 0.7, 0, 0 0, 0, 0, 1, 0" />
-        </filter>
-        <filter id="tritanopia">
-            <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0 0, 0.433, 0.567, 0, 0 0, 0.475, 0.525, 0, 0 0, 0, 0, 1, 0" />
-        </filter>
-    </defs>
-</svg>
+    <svg style="position: fixed; top: -9999px; left: -9999px; width: 1px; height: 1px; overflow: hidden; opacity: 0;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <filter id="protanopia">
+                <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0 0.558, 0.442, 0, 0, 0 0, 0.242, 0.758, 0, 0 0, 0, 0, 1, 0" />
+            </filter>
+            <filter id="deuteranopia">
+                <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0 0.7, 0.3, 0, 0, 0 0, 0.3, 0.7, 0, 0 0, 0, 0, 1, 0" />
+            </filter>
+            <filter id="tritanopia">
+                <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0 0, 0.433, 0.567, 0, 0 0, 0.475, 0.525, 0, 0 0, 0, 0, 1, 0" />
+            </filter>
+        </defs>
+    </svg>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-light fixed-top custom-navbar mb-10">
