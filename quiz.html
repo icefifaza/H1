@@ -222,10 +222,56 @@
         }
 
         /* Color Blind Filters */
-        body.mode-protanopia #colorblind-filter-overlay { display: block; filter: url('#protanopia'); backdrop-filter: url('#protanopia'); }
-        body.mode-deuteranopia #colorblind-filter-overlay { display: block; filter: url('#deuteranopia'); backdrop-filter: url('#deuteranopia'); }
-        body.mode-tritanopia #colorblind-filter-overlay { display: block; filter: url('#tritanopia'); backdrop-filter: url('#tritanopia'); }
-        body.mode-achromatopsia #colorblind-filter-overlay { display: block; filter: grayscale(100%); backdrop-filter: grayscale(100%); }   
+        body.mode-protanopia .custom-navbar,
+        body.mode-protanopia .main-container,
+        body.mode-protanopia .quiz-container,
+        body.mode-protanopia footer,
+        body.mode-protanopia #cat-companion,
+        body.mode-protanopia #quiz-overlay {
+            -webkit-filter: url('#protanopia');
+            filter: url('#protanopia');
+        }
+
+        body.mode-deuteranopia .custom-navbar,
+        body.mode-deuteranopia .main-container,
+        body.mode-deuteranopia .quiz-container,
+        body.mode-deuteranopia footer,
+        body.mode-deuteranopia #cat-companion,
+        body.mode-deuteranopia #quiz-overlay {
+            -webkit-filter: url('#deuteranopia');
+            filter: url('#deuteranopia');
+        }
+
+        body.mode-tritanopia .custom-navbar,
+        body.mode-tritanopia .main-container,
+        body.mode-tritanopia .quiz-container,
+        body.mode-tritanopia footer,
+        body.mode-tritanopia #cat-companion,
+        body.mode-tritanopia #quiz-overlay {
+            -webkit-filter: url('#tritanopia');
+            filter: url('#tritanopia');
+        }
+
+        body.mode-achromatopsia .custom-navbar,
+        body.mode-achromatopsia .main-container,
+        body.mode-achromatopsia .quiz-container,
+        body.mode-achromatopsia footer,
+        body.mode-achromatopsia #cat-companion,
+        body.mode-achromatopsia #quiz-overlay {
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+        }
+
+        /* คืนค่าปกติ */
+        body.mode-normal .custom-navbar,
+        body.mode-normal .main-container,
+        body.mode-normal .quiz-container,
+        body.mode-normal footer,
+        body.mode-normal #cat-companion,
+        body.mode-normal #quiz-overlay {
+            -webkit-filter: none;
+            filter: none;
+        }  
 
     </style>
 </head>
