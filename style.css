@@ -23,7 +23,8 @@ html, body {
     font-family: 'Kanit', sans-serif;
     color: var(--text-main);
     transition: filter 0.3s ease;
-    padding-top: 60px; /* Space for fixed navbar */
+    padding-top: 70px; /* Space for fixed navbar */
+    overflow-x: hidden;
 }
 
 /* =========================================
@@ -51,7 +52,7 @@ body.mode-achromatopsia #colorblind-filter-overlay { display: block; filter: gra
    3. NAVBAR
    ========================================= */
 .custom-navbar {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0,0,0,0.05);
     padding-top: 15px;
@@ -62,6 +63,12 @@ body.mode-achromatopsia #colorblind-filter-overlay { display: block; filter: gra
 
 .navbar-brand img {
     border-radius: 8px;
+    height: 50px;
+    width: auto;
+}
+
+.navbar-brand span {
+    font-size: 1.2rem;
 }
 
 .nav-link {
@@ -81,16 +88,16 @@ body.mode-achromatopsia #colorblind-filter-overlay { display: block; filter: gra
    ========================================= */
 .main-container {
     margin-top: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 80px;
 }
 
 .section-card {
     background: var(--card-bg);
-    border-radius: 24px;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
     border: none;
     overflow: hidden;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -100,8 +107,8 @@ body.mode-achromatopsia #colorblind-filter-overlay { display: block; filter: gra
 }
 
 .card-header-custom {
-    padding: 20px 25px 5px;
-    font-size: 1.25rem;
+    padding: 20px 20px 5px;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--primary-color);
     text-align: center;
